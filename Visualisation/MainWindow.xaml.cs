@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Visualisation
 {
@@ -21,16 +15,33 @@ namespace Visualisation
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Binary_Search_Tree_gif_MouseEnter(object sender, MouseEventArgs e)
+        Anim Binary_Search_Tree_anim = new Anim("Binary_Tree_Search(Base)", "Binary_Tree_Search(gif)");
+        private async void Binary_Search_Tree_MouseEnter(object sender, MouseEventArgs e)
         {
-            var animation = new Int16AnimationUsingKeyFrames();
-            //animation.KeyFrames;
+            
+            Binary_Search_Tree_anim.Old_Effect = Binary_Search_Tree.Effect;
+            Binary_Search_Tree_gif.Source = Binary_Search_Tree_anim.Old_Source;
+            Binary_Search_Tree.Effect = Binary_Search_Tree_anim.effect;
 
+            int i = 0;
+            do
+            {
+                Binary_Search_Tree_anim.bitmapSource = Binary_Search_Tree_anim.decoder.Frames[i];
+                Binary_Search_Tree_gif.Source = Binary_Search_Tree_anim.bitmapSource;
+                await Task.Delay(800);
+                i++;
+            } while (i != 4);
+            Binary_Search_Tree_gif.Source = Binary_Search_Tree_anim.Old_Source;
+        }
+        private void Binary_Search_Tree_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Binary_Search_Tree.Effect = Binary_Search_Tree_anim.Old_Effect;
         }
     }
 }

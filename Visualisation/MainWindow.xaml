@@ -8,8 +8,8 @@
         Title="MainWindow" Height="1080" Width="800">
     <Grid>
         <Grid x:Name="Table_Trees" Background ="#FFDDEAE2" Margin="20,20,20,765">
-            <Grid x:Name="Binary_Search_Tree" Background="#FFF9B6DA" Margin="20,20,480,20">
-                <Image x:Name="Binary_Search_Tree_gif" Margin="15,0,15,40" Source="/Binary_Tree_Search(Base).png" MouseEnter="Binary_Search_Tree_gif_MouseEnter"/>
+            <Grid x:Name="Binary_Search_Tree" Margin="20,20,480,20" MouseEnter="Binary_Search_Tree_MouseEnter" Background="#FFF9B6DA" MouseLeave="Binary_Search_Tree_MouseLeave" Cursor="Hand">
+                <Image x:Name="Binary_Search_Tree_gif" Margin="15,0,15,40" Source="/Binary_Tree_Search(Base).png"/>
                 <TextBlock Text="Binary Search Tree" FontWeight="DemiBold" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,30"/>
             </Grid>
         </Grid>
