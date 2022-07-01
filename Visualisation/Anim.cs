@@ -10,6 +10,11 @@ using System.Windows.Media.Imaging;
 
 namespace Visualisation
 {
+    internal class Anim_Button 
+    {
+        public Effect Old_Effect;
+        public BlurEffect effect = new BlurEffect();
+    }
     internal class Anim
     {
         public ImageSource Old_Source;

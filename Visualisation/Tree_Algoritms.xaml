@@ -1,0 +1,33 @@
+﻿<Window x:Class="Visualisation.Tree_Algoritms"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Visualisation"
+        mc:Ignorable="d"
+        Title="Tree Algoritms" Height="450" Width="800">
+    <Grid>
+        <TextBlock Text="Choose one of actions:" HorizontalAlignment="Left" Margin="310,10,0,0" VerticalAlignment="Top" FontFamily="Cascadia Mono" FontWeight="Bold" FontSize="14" FontStyle="Normal"/>
+        <Grid x:Name="EditData_Grid" Opacity="1" IsEnabled="True">
+            <TextBlock x:Name="EditData_Label" Text="Edit Data" HorizontalAlignment="Left" Margin="140,70,0,0" VerticalAlignment="Top" FontFamily="Cascadia Mono" FontWeight="Normal" FontSize="14" FontStyle="Italic"/>
+            <CheckBox x:Name="EditData_CheckBox" HorizontalAlignment="Left" Margin="225,70,0,0" VerticalAlignment="Top" Checked="EditData_CheckBox_Checked" Unchecked="EditData_CheckBox_Unchecked"/>
+            <RadioButton x:Name="AddData_RB" Content="Add Data" HorizontalAlignment="Left" Margin="140,100,0,0" VerticalAlignment="Top" GroupName="Edit Data" Cursor="Hand" FontFamily="Nirmala UI"/>
+            <RadioButton x:Name="FindData_RB" Content="Find Data" HorizontalAlignment="Left" Margin="140,120,0,0" VerticalAlignment="Top" GroupName="Edit Data" Cursor="Hand" FontFamily="Nirmala UI"/>
+            <RadioButton x:Name="RemoveData_RB" Content="Remove Data" HorizontalAlignment="Left" Margin="140,140,0,0" VerticalAlignment="Top" GroupName="Edit Data" Cursor="Hand" FontFamily="Nirmala UI"/>
+            <RadioButton x:Name="ReplaceData_RB" Content="Replace Data" HorizontalAlignment="Left" Margin="140,160,0,0" VerticalAlignment="Top" GroupName="Edit Data" Cursor="Hand" FontFamily="Nirmala UI" />
+        </Grid>
+        <Grid x:Name="CreateTree_Grid" IsEnabled="True" Opacity="1">
+            <TextBlock x:Name="CreateTree_Label" Text="Create Tree" HorizontalAlignment="Left" Margin="355,70,0,0" VerticalAlignment="Top" FontFamily="Cascadia Mono" FontWeight="Normal" FontSize="14" FontStyle="Italic"/>
+            <CheckBox x:Name="CreateTree_CheckBox" HorizontalAlignment="Left" Margin="455,70,0,0" VerticalAlignment="Top" Checked="CreateTree_CheckBox_Checked" Unchecked="CreateTree_CheckBox_Unchecked"/>
+            <RadioButton x:Name="ManualInput_RB" Content="Manual input" HorizontalAlignment="Left" Margin="355,100,0,0" VerticalAlignment="Top" GroupName="Create Tree" Cursor="Hand" FontFamily="Nirmala UI"/>
+            <RadioButton x:Name="RandomInput_RB" Content="Random input" HorizontalAlignment="Left" Margin="355,120,0,0" VerticalAlignment="Top" GroupName="Create Tree" Cursor="Hand" FontFamily="Nirmala UI" />
+        </Grid>
+        <Grid x:Name="OutputData_Grid" IsEnabled="True" Opacity="1">
+            <TextBlock x:Name="OutputData_Label" Text="Output Data" HorizontalAlignment="Left" Margin="570,70,0,0" VerticalAlignment="Top" FontFamily="Cascadia Mono" FontWeight="Normal" FontSize="14" FontStyle="Italic"/>
+            <CheckBox x:Name="OutputData_CheckBox" HorizontalAlignment="Left" Margin="670,70,0,0" VerticalAlignment="Top" Checked="OutputData_CheckBox_Checked" Unchecked="OutputData_CheckBox_Unchecked"/>
+            <RadioButton x:Name="PrintTree_RB" Content="Print Tree" HorizontalAlignment="Left" Margin="570,100,0,0" VerticalAlignment="Top" GroupName="Output Data" Cursor="Hand" FontFamily="Nirmala UI"/>
+            <RadioButton x:Name="PrintTreePlus_RB" Content="Print Tree with Edit Data" HorizontalAlignment="Left" Margin="570,120,0,0" VerticalAlignment="Top" GroupName="Output Data" Cursor="Hand" FontFamily="Nirmala UI" />
+        </Grid>
+        <Button x:Name="Action_Button" Content="Action!" Cursor="Hand" HorizontalAlignment="Left" Margin="45,290,0,0" VerticalAlignment="Top" FontFamily="RomanT" FontWeight="Bold" FontSize="16" BorderBrush="White" Foreground="Black" Background="White" MouseEnter="Action_Button_MouseEnter" MouseLeave="Action_Button_MouseLeave" Click="Action_Button_Click"/>
+    </Grid>
+</Window>

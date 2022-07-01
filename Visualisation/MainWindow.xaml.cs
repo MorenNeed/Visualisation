@@ -28,20 +28,29 @@ namespace Visualisation
             Binary_Search_Tree_anim.Old_Effect = Binary_Search_Tree.Effect;
             Binary_Search_Tree_gif.Source = Binary_Search_Tree_anim.Old_Source;
             Binary_Search_Tree.Effect = Binary_Search_Tree_anim.effect;
-
             int i = 0;
-            do
+            if(Binary_Search_Tree_gif.Source == Binary_Search_Tree_anim.Old_Source) 
             {
-                Binary_Search_Tree_anim.bitmapSource = Binary_Search_Tree_anim.decoder.Frames[i];
-                Binary_Search_Tree_gif.Source = Binary_Search_Tree_anim.bitmapSource;
-                await Task.Delay(800);
-                i++;
-            } while (i != 4);
+                do
+                {
+                    Binary_Search_Tree_anim.bitmapSource = Binary_Search_Tree_anim.decoder.Frames[i];
+                    Binary_Search_Tree_gif.Source = Binary_Search_Tree_anim.bitmapSource;
+                    await Task.Delay(800);
+                    i++;
+                } while (i != 4);
+            }
             Binary_Search_Tree_gif.Source = Binary_Search_Tree_anim.Old_Source;
         }
         private void Binary_Search_Tree_MouseLeave(object sender, MouseEventArgs e)
         {
             Binary_Search_Tree.Effect = Binary_Search_Tree_anim.Old_Effect;
+        }
+
+        private void Binary_Search_Tree_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            Tree_Algoritms Window = new Tree_Algoritms();
+            Window.Show();
         }
     }
 }
